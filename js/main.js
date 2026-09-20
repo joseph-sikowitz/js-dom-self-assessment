@@ -1,3 +1,10 @@
+/*
+  The getData() async function retrieves JSON data from the airbnb file and 
+  converts it to a JS object.
+
+  @return: JS object of airbnb data.
+*/
+
 async function getData() {
   //fetch JSON from file
   const res = await fetch("../data/airbnb_sf_listings_500.json");
@@ -6,6 +13,12 @@ async function getData() {
   return listings;
 }
 
+/*
+  The main() async function calls getData(), takes a slice of the first 50
+  elements in the JS object, and then builds cards in HTML to display.
+
+  @return: none.
+*/
 async function main() {
   //get JSON data and select first 50 listings
   const listingData = await getData();
@@ -13,7 +26,7 @@ async function main() {
 
   let rows = "";
 
-  //for each listing, add picture, name, description, price, host picture, 
+  //for each listing, add picture, name, description, price, host picture,
   //host name, listing URL to a card
   dataFirstFifty.forEach((e) => {
     const card = `<div class="col-4 g-4">
@@ -55,16 +68,26 @@ async function main() {
   listingsElement.innerHTML = rows;
 }
 
+/*
+  The expand() function allows the cards on the page to toggle between
+  being scrollable and fully expanded.
+
+  @return: none.
+*/
 function expand() {
+  //find all scroll boxes
   const scrollBoxes = document.querySelectorAll(".scrollable");
 
+  //check that there are scrollable elements on page
   if (scrollBoxes.length) {
+    //if length > 0, change each class to expanded and update button text
     scrollBoxes.forEach((e) => {
       e.classList.remove("scrollable");
       e.classList.add("expanded");
       document.querySelector("#expandbtn").innerHTML = "Shrink View";
     });
   } else {
+    //if scrollBoxes.length == 0, change each class to scrollable and update button
     const expandBoxes = document.querySelectorAll(".expanded");
     expandBoxes.forEach((e) => {
       e.classList.remove("expanded");
@@ -74,10 +97,16 @@ function expand() {
   }
 }
 
+/*
+  The addExpand() function adds expand() to a button as an event listener.
+
+  @return: none.
+*/
 function addExpand() {
   const expandBtn = document.querySelector("#expandbtn");
   expandBtn.addEventListener("click", expand);
 }
 
+//execute when page loads
 addExpand();
 main();
