@@ -56,13 +56,28 @@ async function main() {
 }
 
 function expand() {
-  const scrollBoxes = document.querySelector(".scrollable");
-  if (scrollBoxes) {
+  const scrollBoxes = document.querySelectorAll(".scrollable");
+
+  if (scrollBoxes.length) {
     scrollBoxes.forEach((e) => {
       e.classList.remove("scrollable");
       e.classList.add("expanded");
+      document.querySelector("#expandbtn").innerHTML = "Shrink View";
+    });
+  } else {
+    const expandBoxes = document.querySelectorAll(".expanded");
+    expandBoxes.forEach((e) => {
+      e.classList.remove("expanded");
+      e.classList.add("scrollable");
+      document.querySelector("#expandbtn").innerHTML = "Expand View";
     });
   }
 }
 
+function addExpand() {
+  const expandBtn = document.querySelector("#expandbtn");
+  expandBtn.addEventListener("click", expand);
+}
+
+addExpand();
 main();
