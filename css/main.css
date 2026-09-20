@@ -12,6 +12,11 @@
   max-height: 250px;
 }
 
+.expanded {
+  overflow-y: visible;
+  max-height: 100%;
+}
+
 .unit-image {
   width: 100%;
   height: 15vw;
