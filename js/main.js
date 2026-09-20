@@ -1,15 +1,20 @@
 async function getData() {
-  const res = await fetch("../data/airbnb_sf_listings_500.json"); //fetch JSON from file
-  const listings = await res.json(); //create JS object
+  //fetch JSON from file
+  const res = await fetch("../data/airbnb_sf_listings_500.json");
+  //create JS object
+  const listings = await res.json();
   return listings;
 }
 
 async function main() {
+  //get JSON data and select first 50 listings
   const listingData = await getData();
   const dataFirstFifty = listingData.slice(0, 50);
 
   let rows = "";
 
+  //for each listing, add picture, name, description, price, host picture, 
+  //host name, listing URL to a card
   dataFirstFifty.forEach((e) => {
     const card = `<div class="col-4 g-4">
             <div class="listing card">
@@ -44,6 +49,7 @@ async function main() {
     rows += card;
   });
 
+  //add cards to the listings element in the HTML
   const listingsElement = document.querySelector("#listings");
   listingsElement.innerHTML = rows;
 }
