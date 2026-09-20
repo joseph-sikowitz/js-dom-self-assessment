@@ -55,4 +55,14 @@ async function main() {
   listingsElement.innerHTML = rows;
 }
 
+function expand() {
+  const scrollBoxes = document.querySelector(".scrollable");
+  if (scrollBoxes) {
+    scrollBoxes.forEach((e) => {
+      e.classList.remove("scrollable");
+      e.classList.add("expanded");
+    });
+  }
+}
+
 main();
