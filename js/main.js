@@ -2,7 +2,7 @@
   The getData() async function retrieves JSON data from the airbnb file and 
   converts it to a JS object.
 
-  @return: JS object of airbnb data.
+  return: JS object of airbnb data.
 */
 
 async function getData() {
@@ -17,7 +17,7 @@ async function getData() {
   The main() async function calls getData(), takes a slice of the first 50
   elements in the JS object, and then builds cards in HTML to display.
 
-  @return: none.
+  return: none.
 */
 async function main() {
   //get JSON data and select first 50 listings
@@ -72,7 +72,7 @@ async function main() {
   The expand() function allows the cards on the page to toggle between
   being scrollable and fully expanded.
 
-  @return: none.
+  return: none.
 */
 function expand() {
   //find all scroll boxes
@@ -100,7 +100,7 @@ function expand() {
 /*
   The addExpand() function adds expand() to a button as an event listener.
 
-  @return: none.
+  return: none.
 */
 function addExpand() {
   const expandBtn = document.querySelector("#expandbtn");
