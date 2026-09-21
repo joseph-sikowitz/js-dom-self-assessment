@@ -34,6 +34,10 @@ All of the HTML, CSS, and Javascript in this project as well as this README were
 
 - The Javascript for the site was not working when it was first published to GitHub Pages. The following prompt was used to ask Claude to help troubleshoot. It pointed to the fact that my data folder had to be referenced the way it would appear in GitHub, not how it appears in my computer's file structure.
   - Prompt: "Javascript is not working on the github pages site I created from this repo: https://github.com/joseph-sikowitz/js-dom-self-assessment"
+- I was having trouble displaying the navbar menu when my page collapsed to one column. The following prompt was used to ask Claude to provide information on how to do this in Bootstrap.
+  - Prompt: "In bootstrap 5, how do you make a button to display the navbar menu when the viewport is collapsed?"
+- I was having trouble with the amenities entry in the JSON. I overlooked the fact that the data in that entry is just a string, not a JSON array. I asked Claude how to turn the string into an array.
+  - Prompt: "How do you convert a JSON string into a Javascript array?"
 
 ## Author
 
