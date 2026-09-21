@@ -14,12 +14,12 @@ async function getData() {
 }
 
 /*
-  The main() async function calls getData(), takes a slice of the first 50
+  The loadData() async function calls getData(), takes a slice of the first 50
   elements in the JS object, and then builds cards in HTML to display.
 
   return: none.
 */
-async function main() {
+async function loadData() {
   //get JSON data and select first 50 listings
   const listingData = await getData();
   const dataFirstFifty = listingData.slice(0, 50);
@@ -111,4 +111,4 @@ function addExpand() {
 
 //execute when page loads
 addExpand();
-main();
+loadData();
