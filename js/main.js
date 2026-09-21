@@ -4,13 +4,30 @@
 
   return: JS object of airbnb data.
 */
-
 async function getData() {
   //fetch JSON from file
   const res = await fetch("data/airbnb_sf_listings_500.json");
   //create JS object
   const listings = await res.json();
   return listings;
+}
+
+/*
+  The unpackAmenities() function loops through the amenities array in the JS
+  object returned from the file and puts them into list elements.
+
+  return: string of amenities in <li> tags.
+*/
+function unpackAmenities(amenities) {
+  let amenitiesList = "";
+
+  if (Array.isArray(amenities)) {
+    amenities.forEach((e) => {
+      amenitiesList += `<li>${e}</li>`;
+    });
+  }
+
+  return amenitiesList;
 }
 
 /*
@@ -27,8 +44,12 @@ async function loadData() {
   let rows = "";
 
   //for each listing, add picture, name, description, price, host picture,
-  //host name, listing URL to a card
+  //host name, listing URL, amenities to a card
   dataFirstFifty.forEach((e) => {
+    const amenitiesArray = JSON.parse(e["amenities"]);
+    console.log(amenitiesArray);
+    const amenitiesHTML = unpackAmenities(amenitiesArray);
+
     const card = `<div class="col-12 col-lg-4 g-4">
             <div class="listing card">
               <img
@@ -41,7 +62,7 @@ async function loadData() {
                   <div class="card-body">
                     <h5 class="card-title list-group-item">${e["name"]}</h5>
                     <p class="card-text list-group-item">${e["description"]}</p>
-                    <p class="card-text list-group-item">Amenities: ${e["amenities"]}</p>
+                    <div class="card-text list-group-item">Amenities: ${amenitiesHTML}</div>
                     <p class="card-text list-group-item">Price: ${e["price"]}</p>
 
                     <div class="list-group-item">
