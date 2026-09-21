@@ -6,14 +6,18 @@ A page of AirBnB listings from scraped data for **CS 5610 Web Development** at N
 
 The objective of this project is to create a website that contains data extracted from airbnb_sf_listings_500.json for the first 50 listings in the file. The extracted data includes:
 
- - listing name
- - description
- - amenities
- - host (name and photo)
- - price
- - thumbnail
+- listing name
+- description
+- amenities
+- host (name and photo)
+- price
+- thumbnail
 
 Additionally, the project includes the creative addition of a button in the header that expands and contracts all of the listings so the user can decide if they would rather use a scroll box for each one or see them as expanded columns.
+
+## Deployment
+
+- https://joseph-sikowitz.github.io/js-dom-self-assessment/
 
 ## Technologies Used
 
@@ -24,11 +28,12 @@ Additionally, the project includes the creative addition of a button in the head
 - **Git**
 - **GitHub**
 
- ## AI Disclosure
+## AI Disclosure
 
- ## Author
+## Author
 
- **Joseph Sikowitz**
+**Joseph Sikowitz**
+
 - GitHub: [@joseph-sikowitz](https://github.com/joseph-sikowitz)
 - Email: sikowitz.j@northeastern.edu
 
