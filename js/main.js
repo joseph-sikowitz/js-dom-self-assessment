@@ -51,7 +51,9 @@ async function main() {
                       />
                       <p class="card-text">Host: ${e["host_name"]} </p>
                     </div>
-                    <a href="${e["listing_url"]}" target="_blank" class="btn btn-primary listing-button"
+                    <a href="${e["listing_url"]}" 
+                      target="_blank" 
+                      class="btn btn-primary listing-button"
                     >View Listing</a>
                   </div>
                 </div>
