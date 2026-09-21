@@ -46,8 +46,8 @@ async function loadData() {
   //for each listing, add picture, name, description, price, host picture,
   //host name, listing URL, amenities to a card
   dataFirstFifty.forEach((e) => {
+    //parse the amenities list and create a list
     const amenitiesArray = JSON.parse(e["amenities"]);
-    console.log(amenitiesArray);
     const amenitiesHTML = unpackAmenities(amenitiesArray);
 
     const card = `<div class="col-12 col-lg-4 g-4">
@@ -62,7 +62,7 @@ async function loadData() {
                   <div class="card-body">
                     <h5 class="card-title list-group-item">${e["name"]}</h5>
                     <p class="card-text list-group-item">${e["description"]}</p>
-                    <div class="card-text list-group-item">Amenities: ${amenitiesHTML}</div>
+                    <div class="card-text list-group-item">Amenities: <ul>${amenitiesHTML}</ul></div>
                     <p class="card-text list-group-item">Price: ${e["price"]}</p>
 
                     <div class="list-group-item">
