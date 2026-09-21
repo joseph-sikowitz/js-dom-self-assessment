@@ -41,6 +41,7 @@ async function loadData() {
                   <div class="card-body">
                     <h5 class="card-title list-group-item">${e["name"]}</h5>
                     <p class="card-text list-group-item">${e["description"]}</p>
+                    <p class="card-text list-group-item">Amenities: ${e["amenities"]}</p>
                     <p class="card-text list-group-item">Price: ${e["price"]}</p>
 
                     <div class="list-group-item">
