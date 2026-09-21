@@ -7,7 +7,7 @@
 
 async function getData() {
   //fetch JSON from file
-  const res = await fetch("../data/airbnb_sf_listings_500.json");
+  const res = await fetch("./data/airbnb_sf_listings_500.json");
   //create JS object
   const listings = await res.json();
   return listings;
