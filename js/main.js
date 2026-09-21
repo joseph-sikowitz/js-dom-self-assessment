@@ -29,7 +29,7 @@ async function main() {
   //for each listing, add picture, name, description, price, host picture,
   //host name, listing URL to a card
   dataFirstFifty.forEach((e) => {
-    const card = `<div class="col-4 g-4">
+    const card = `<div class="col-12 col-lg-4 g-4">
             <div class="listing card">
               <img
                 src="${e["picture_url"]}"
