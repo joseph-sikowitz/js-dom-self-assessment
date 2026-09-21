@@ -30,6 +30,11 @@ Additionally, the project includes the creative addition of a button in the head
 
 ## AI Disclosure
 
+All of the HTML, CSS, and Javascript in this project as well as this README were written by Joseph Sikowitz. Claude Sonnet 5 was used to troubleshoot specific issues:
+
+- The Javascript for the site was not working when it was first published to GitHub Pages. The following prompt was used to ask Claude to help troubleshoot. It pointed to the fact that my data folder had to be referenced the way it would appear in GitHub, not how it appears in my computer's file structure.
+  - Prompt: "Javascript is not working on the github pages site I created from this repo: https://github.com/joseph-sikowitz/js-dom-self-assessment"
+
 ## Author
 
 **Joseph Sikowitz**
